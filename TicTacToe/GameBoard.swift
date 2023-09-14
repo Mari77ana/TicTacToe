@@ -10,12 +10,17 @@ import Foundation
 
 class GameBoard {
     
-    let CONTINUE_GAME = 9
+   
     
     let EMPTY_CELL = 0
+    let NOT_FREE_CELL = 8
+    
     let PLAYER_1 = 1
     let PLAYER_2 = 2
-    var currentPlayer = 3
+    var currentPlayer = 4
+    
+    var result = 0
+    let CONTINUE_GAME = 9
     
     var board = [0,0,0,0,0,0,0,0,0]
     
@@ -79,6 +84,33 @@ class GameBoard {
      */
     func placeOnBoard(atBox: Int) -> Int {
         
+        if board[atBox] == EMPTY_CELL{
+            board[atBox] = currentPlayer
+        }
+        else {
+            return NOT_FREE_CELL
+        }
+        
+        switchPlayers()
+        
+        result = checkForWinner()
+        
+      
+        
+        
+        /*
+        // Om rutan inte är tom, så avslutar vi funktionen  här
+        if board[atBox] != EMPTY_CELL {
+            return 8
+        }
+         */
+        
+        // Sätt nuvarande spelares värde i rutan
+        //board[atBox] = currentPlayer
+        
+      
+        
+        
         // Kolla om elementet är tom, annars returnera false
         
         // Uppdatera värdet på elementet till nuvarande spelares siffra
@@ -101,7 +133,7 @@ class GameBoard {
     
         // Switcha spelares turn
         
-        return true
+      return CONTINUE_GAME
         
     }
    

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
    
     let gameboard = GameBoard()
     
-    //let imgBox = [0,0,0,0,0,0,0,0]
+    //let imgBox = [0,0,0,0,0,0,0,0] 
     
     override func viewDidLoad() {
         super.viewDidLoad()
