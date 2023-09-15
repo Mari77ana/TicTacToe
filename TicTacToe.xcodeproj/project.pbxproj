@@ -16,8 +16,6 @@
 		0789ACED2AAA69FC00C306FB /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789ACEC2AAA69FC00C306FB /* TicTacToeTests.swift */; };
 		0789ACF72AAA69FC00C306FB /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789ACF62AAA69FC00C306FB /* TicTacToeUITests.swift */; };
 		0789ACF92AAA69FC00C306FB /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789ACF82AAA69FC00C306FB /* TicTacToeUITestsLaunchTests.swift */; };
-		07AE1B472AAFA4D800D7D670 /* icons8-squirtle-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1B462AAFA4D800D7D670 /* icons8-squirtle-100.png */; };
-		07AE1B492AAFA4EC00D7D670 /* icons8-jigglypuff-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1B482AAFA4EC00D7D670 /* icons8-jigglypuff-100.png */; };
 		07AE1B4F2AB0F99400D7D670 /* Menu_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1B4E2AB0F99400D7D670 /* Menu_Controller.swift */; };
 		07AE1B8F2AB218C300D7D670 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1B8E2AB218C300D7D670 /* GameBoard.swift */; };
 		07AE1B932AB23D7B00D7D670 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1B922AB23D7B00D7D670 /* Player.swift */; };
@@ -54,8 +52,6 @@
 		0789ACF22AAA69FC00C306FB /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0789ACF62AAA69FC00C306FB /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		0789ACF82AAA69FC00C306FB /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		07AE1B462AAFA4D800D7D670 /* icons8-squirtle-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-squirtle-100.png"; path = "../../../../../Downloads/icons8-squirtle-100.png"; sourceTree = "<group>"; };
-		07AE1B482AAFA4EC00D7D670 /* icons8-jigglypuff-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-jigglypuff-100.png"; path = "../../../../../Downloads/icons8-jigglypuff-100.png"; sourceTree = "<group>"; };
 		07AE1B4E2AB0F99400D7D670 /* Menu_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_Controller.swift; sourceTree = "<group>"; };
 		07AE1B8E2AB218C300D7D670 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		07AE1B922AB23D7B00D7D670 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -114,8 +110,6 @@
 				0789ACD92AAA69FB00C306FB /* ViewController.swift */,
 				0789ACDB2AAA69FB00C306FB /* Main.storyboard */,
 				0789ACDE2AAA69FB00C306FB /* Assets.xcassets */,
-				07AE1B482AAFA4EC00D7D670 /* icons8-jigglypuff-100.png */,
-				07AE1B462AAFA4D800D7D670 /* icons8-squirtle-100.png */,
 				0789ACE02AAA69FB00C306FB /* LaunchScreen.storyboard */,
 				0789ACE32AAA69FB00C306FB /* Info.plist */,
 				07AE1B4E2AB0F99400D7D670 /* Menu_Controller.swift */,
@@ -247,10 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0789ACE22AAA69FB00C306FB /* LaunchScreen.storyboard in Resources */,
-				07AE1B492AAFA4EC00D7D670 /* icons8-jigglypuff-100.png in Resources */,
 				0789ACDF2AAA69FB00C306FB /* Assets.xcassets in Resources */,
 				0789ACDD2AAA69FB00C306FB /* Main.storyboard in Resources */,
-				07AE1B472AAFA4D800D7D670 /* icons8-squirtle-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

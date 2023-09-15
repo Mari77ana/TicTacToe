@@ -15,6 +15,7 @@ class ViewController: UIViewController {
    
     let gameboard = GameBoard()
     
+    
     //let imgBox = [0,0,0,0,0,0,0,0] 
     
     override func viewDidLoad() {
@@ -24,6 +25,32 @@ class ViewController: UIViewController {
     
      
     @IBAction func onTapBox(_ sender: UITapGestureRecognizer) {
+       print("Hello")
+        guard let tappedImageView = sender.view as? UIImageView else {        return    }
+      
+        guard let tag = sender.view?.tag else{
+                return
+            }
+        
+        
+        let playerResult = gameboard.placeOnBoard(atBox: tag)
+        
+        
+        
+        if gameboard.currentPlayer == gameboard.PLAYER_1{
+            
+            tappedImageView.image = UIImage(named: "android_icon")
+            
+        }
+        else if gameboard.currentPlayer == gameboard.PLAYER_2 {
+            tappedImageView.image = UIImage(named:"apple_icon")
+            
+        }
+       
+        
+        
+       // if gameboard.PLAYER_1 ==
+        
         
         // Hämta taggen
         

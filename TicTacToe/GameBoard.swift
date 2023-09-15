@@ -19,8 +19,10 @@ class GameBoard {
     let PLAYER_2 = 2
     var currentPlayer = 4
     
-    var result = 0
+    var result = 7
+    var DRAW = 5
     let CONTINUE_GAME = 9
+   
     
     var board = [0,0,0,0,0,0,0,0,0]
     
@@ -70,7 +72,7 @@ class GameBoard {
     func switchPlayers() {
         if currentPlayer == PLAYER_1 {
             currentPlayer = PLAYER_2
-        } else{ currentPlayer = PLAYER_1}
+        } else{ currentPlayer = PLAYER_1 }
     }
     
     /*
@@ -82,33 +84,58 @@ class GameBoard {
      DRAW = 5
      
      */
+    
     func placeOnBoard(atBox: Int) -> Int {
         
-        if board[atBox] == EMPTY_CELL{
+        if board[atBox] == EMPTY_CELL {
             board[atBox] = currentPlayer
-        }
-        else {
-            return NOT_FREE_CELL
-        }
+            switchPlayers()
+            result = checkForWinner()
+            
+            
+            if result == PLAYER_1 || result == PLAYER_2 {
+                return result
+                
+            }else if result == DRAW {
+                return DRAW
+                
+            }
+            else { return CONTINUE_GAME }
+            
+            
+        }else{return NOT_FREE_CELL}
         
-        switchPlayers()
         
-        result = checkForWinner()
         
-      
+        
+        
+        
+        
+        
+        
+        
+        //let GAMEOVER = result != CONTINUE_GAME
+        
+        //result != CONTINUE_GAME
+        // Avsluta spelet
+        
+        
+        
+        
+        
         
         
         /*
-        // Om rutan inte är tom, så avslutar vi funktionen  här
-        if board[atBox] != EMPTY_CELL {
-            return 8
-        }
+         // Om rutan inte är tom, så avslutar vi funktionen  här
+         if board[atBox] != EMPTY_CELL {
+         return 8
+         }
          */
         
         // Sätt nuvarande spelares värde i rutan
         //board[atBox] = currentPlayer
         
-      
+        
         
         
         // Kolla om elementet är tom, annars returnera false
@@ -117,25 +144,21 @@ class GameBoard {
         
         // Kolla om någon har vunnit, om så ska du avsluta spelet och annonsera vinnaren!
         
-//        let result = checkForWinner()
-//
-//        if result == PLAYER_1 {
-//            // Player 1 har vunnit
-//
-//            // Stoppa spelet och annonsera vinnaren
-//        } else if result == PLAYER_2 {
-//
-//
-//        }
+        //        let result = checkForWinner()
+        //
+        //        if result == PLAYER_1 {
+        //            // Player 1 har vunnit
+        //
+        //            // Stoppa spelet och annonsera vinnaren
+        //        } else if result == PLAYER_2 {
+        //
+        //
+        //        }
         
         
-        
-    
         // Switcha spelares turn
         
-      return CONTINUE_GAME
+        
         
     }
-   
-
 }
