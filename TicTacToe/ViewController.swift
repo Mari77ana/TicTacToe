@@ -11,8 +11,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var img_boxes: [UIImageView]!
     
+    @IBOutlet weak var lbl_txtPlayersTurn: UILabel!
     
-    @IBOutlet weak var lbl_txtPlayer: UILabel!
+    @IBOutlet weak var lbl_txtTurn: UILabel!
+    
     
     let gameboard = GameBoard()
     
@@ -26,34 +28,49 @@ class ViewController: UIViewController {
     
      
     @IBAction func onTapBox(_ sender: UITapGestureRecognizer) {
-       print("Hello") // printas inte ut
+        
+       print("Hello")
         guard let tappedImageView = sender.view as? UIImageView else {  return }
       
         guard let tag = sender.view?.tag else{
                 return
             }
+        // OutOfBounds, that's why -1
        let index = tag - 1
       
-        
-        
         let playing = gameboard.placeOnBoard(atBox: index)
         
         if playing == gameboard.NOT_FREE_CELL{
             return
         }
         
+   
         if gameboard.currentPlayer == gameboard.PLAYER_1 {
+            lbl_txtPlayersTurn.text = "Player 1"
             tappedImageView.image = UIImage(named:"android_icon")
-            
-        }else if gameboard.currentPlayer == gameboard.PLAYER_2{
-            tappedImageView.image = UIImage(named: "apple_icon"  )
-            
-        }
+           
+            }
+        else if gameboard.currentPlayer == gameboard.PLAYER_2 {
+            lbl_txtPlayersTurn.text = "Player 2"
+            tappedImageView.image = UIImage(named: "apple_icon")
+           }
+        else{lbl_txtPlayersTurn.text = ""}
         
         let  playerResult = gameboard.checkForWinner()
+        
+     /*
         if playerResult == gameboard.PLAYER_1{
-            print("Player 1 won")
+            print("Player 1 Android won")
         }
+        else if playerResult == gameboard.PLAYER_2 {
+            print("Player 2 apple won ")
+        }
+        else if  playerResult == gameboard.DRAW {
+            print("Spelet är oavgjort")
+        }
+      */
+       
+     
         
        
          

@@ -10,19 +10,17 @@ import Foundation
 
 class GameBoard {
     
-   
-    
     let EMPTY_CELL = 0
     let NOT_FREE_CELL = 8
     
     let PLAYER_1 = 1
     let PLAYER_2 = 2
-    var currentPlayer = 4
+    var currentPlayer = 1
     
-    var result = 7
+    
     var DRAW = 5
     let CONTINUE_GAME = 9
-   
+    
     
     var board = [0,0,0,0,0,0,0,0,0]
     
@@ -66,8 +64,8 @@ class GameBoard {
         
         return CONTINUE_GAME
         
-        }
-   
+    }
+    
     
     func switchPlayers() {
         if currentPlayer == PLAYER_1 {
@@ -87,79 +85,89 @@ class GameBoard {
     
     func placeOnBoard(atBox: Int) -> Int {
         
+        // If Playboard is emty -> play
         if board[atBox] == EMPTY_CELL {
-            switchPlayers()
+            
             board[atBox] = currentPlayer
+            switchPlayers()
             
-            result = checkForWinner()
+            let result = checkForWinner()
             
-            
-            if result == PLAYER_1 || result == PLAYER_2 {
-                return result
-                
-            }else if result == DRAW {
+            if result == PLAYER_1{
+                print("Player 1 won")
+                return PLAYER_1
+            }
+            else if result == PLAYER_2{
+                print("Player 2 won")
+                return PLAYER_2
+            }
+            else if result == DRAW{
+                print("DRAW")
                 return DRAW
                 
             }
-            else { return CONTINUE_GAME }
+            else {
+                return CONTINUE_GAME}
             
-            
-        }else{return NOT_FREE_CELL}
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //let GAMEOVER = result != CONTINUE_GAME
-        
-        //result != CONTINUE_GAME
-        // Avsluta spelet
-        
-        
-        
-        
-        
-        
-        
-        /*
-         // Om rutan inte är tom, så avslutar vi funktionen  här
-         if board[atBox] != EMPTY_CELL {
-         return 8
          }
-         */
-        
-        // Sätt nuvarande spelares värde i rutan
-        //board[atBox] = currentPlayer
-        
-        
-        
-        
-        // Kolla om elementet är tom, annars returnera false
-        
-        // Uppdatera värdet på elementet till nuvarande spelares siffra
-        
-        // Kolla om någon har vunnit, om så ska du avsluta spelet och annonsera vinnaren!
-        
-        //        let result = checkForWinner()
-        //
-        //        if result == PLAYER_1 {
-        //            // Player 1 har vunnit
-        //
-        //            // Stoppa spelet och annonsera vinnaren
-        //        } else if result == PLAYER_2 {
-        //
-        //
-        //        }
-        
-        
-        // Switcha spelares turn
-        
-        
-        
+        return NOT_FREE_CELL
+        // else return full PlayBoard 
     }
+   
+            
 }
+            
+            
+            
+            
+            
+            
+            //let GAMEOVER = result != CONTINUE_GAME
+            
+            //result != CONTINUE_GAME
+            // Avsluta spelet
+            
+            
+            
+            
+            
+            
+            
+            /*
+             // Om rutan inte är tom, så avslutar vi funktionen  här
+             if board[atBox] != EMPTY_CELL {
+             return 8
+             }
+             */
+            
+            // Sätt nuvarande spelares värde i rutan
+            //board[atBox] = currentPlayer
+            
+            
+            
+            
+            // Kolla om elementet är tom, annars returnera false
+            
+            // Uppdatera värdet på elementet till nuvarande spelares siffra
+            
+            // Kolla om någon har vunnit, om så ska du avsluta spelet och annonsera vinnaren!
+            
+            //        let result = checkForWinner()
+            //
+            //        if result == PLAYER_1 {
+            //            // Player 1 har vunnit
+            //
+            //            // Stoppa spelet och annonsera vinnaren
+            //        } else if result == PLAYER_2 {
+            //
+            //
+            //        }
+            
+            
+            // Switcha spelares turn
+            
+            
+            
+        
+    
+
