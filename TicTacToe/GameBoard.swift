@@ -88,8 +88,9 @@ class GameBoard {
     func placeOnBoard(atBox: Int) -> Int {
         
         if board[atBox] == EMPTY_CELL {
-            board[atBox] = currentPlayer
             switchPlayers()
+            board[atBox] = currentPlayer
+            
             result = checkForWinner()
             
             

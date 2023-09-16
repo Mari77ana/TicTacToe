@@ -14,6 +14,7 @@ class Menu_Controller: UIViewController {
     let toGameBoard = "goToGameBoard" // identifier
     
     
+    @IBOutlet weak var img_box: UIImageView!
     
 
     override func viewDidLoad() {
@@ -32,6 +33,9 @@ class Menu_Controller: UIViewController {
     
 
    
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        print("Tap Gester was called")
+    }
     
 
 }
