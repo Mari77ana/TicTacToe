@@ -101,11 +101,13 @@ class GameBoard {
                 print("Player 2 won")
                 return PLAYER_2
             }
-            else if result == DRAW{
+           
+        
+            else if result != PLAYER_1 && result != PLAYER_2 {
                 print("DRAW")
                 return DRAW
-                
-            }
+             }
+            
             else {
                 return CONTINUE_GAME}
             

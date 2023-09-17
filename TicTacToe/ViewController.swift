@@ -36,9 +36,9 @@ class ViewController: UIViewController {
                 return
             }
         // OutOfBounds, that's why -1
-       let index = tag - 1
+      // let index = tag - 1
       
-        let playing = gameboard.placeOnBoard(atBox: index)
+        let playing = gameboard.placeOnBoard(atBox: tag)
         
         if playing == gameboard.NOT_FREE_CELL{
             return

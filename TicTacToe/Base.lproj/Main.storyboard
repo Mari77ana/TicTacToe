@@ -32,7 +32,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ovt-ey-9QD" userLabel="Stack Horizontal">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKu-HH-GKV">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKu-HH-GKV">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -44,7 +44,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="ZEU-cs-ZqE" appends="YES" id="v18-hh-WYc"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZuP-7w-rSo">
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZuP-7w-rSo">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -56,7 +56,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="yut-QS-eSB" appends="YES" id="iMJ-9p-Laq"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ShH-t8-cnL">
+                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ShH-t8-cnL">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -73,7 +73,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="43c-Sa-FQe" userLabel="Stack Horizontal">
                                         <rect key="frame" x="0.0" y="110" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vu-rf-hAV">
+                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vu-rf-hAV">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -85,7 +85,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="Fv3-Us-gtS" appends="YES" id="83J-hi-sa5"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1o-BP-cXW">
+                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1o-BP-cXW">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -97,7 +97,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="Aln-d6-A8g" appends="YES" id="B4O-Dm-91E"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOk-Jx-H8z">
+                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOk-Jx-H8z">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -114,7 +114,7 @@
                                     <stackView opaque="NO" tag="7" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SLd-uU-7Oq" userLabel="Stack Horizontal">
                                         <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-ve-Qpr">
+                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-ve-Qpr">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -126,7 +126,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="JwR-xM-Cjm" appends="YES" id="wU5-AS-0vH"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-Oy-2pe">
+                                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-Oy-2pe">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
@@ -138,7 +138,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="CCS-3W-ahe" appends="YES" id="2Aq-Vt-Lnv"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GwK-Q7-Qy2">
+                                            <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GwK-Q7-Qy2">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <gestureRecognizers/>
