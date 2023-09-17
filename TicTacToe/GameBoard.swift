@@ -103,7 +103,7 @@ class GameBoard {
             }
            
         
-            else if result != PLAYER_1 && result != PLAYER_2 {
+            else if result != PLAYER_1 && result != PLAYER_2 && !board.contains(EMPTY_CELL){
                 print("DRAW")
                 return DRAW
              }

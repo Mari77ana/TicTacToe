@@ -35,25 +35,24 @@ class ViewController: UIViewController {
         guard let tag = sender.view?.tag else{
                 return
             }
+       
         // OutOfBounds, that's why -1
       // let index = tag - 1
       
         let playing = gameboard.placeOnBoard(atBox: tag)
+        lbl_txtPlayersTurn.text = "Player 1"
         
         if playing == gameboard.NOT_FREE_CELL{
             return
         }
-        
-   
         if gameboard.currentPlayer == gameboard.PLAYER_1 {
-            lbl_txtPlayersTurn.text = "Player 1"
-            tappedImageView.image = UIImage(named:"android_icon")
+          tappedImageView.image = UIImage(named:"android_icon")
            
-            }
+        }
         else if gameboard.currentPlayer == gameboard.PLAYER_2 {
             lbl_txtPlayersTurn.text = "Player 2"
             tappedImageView.image = UIImage(named: "apple_icon")
-           }
+        }
         else{lbl_txtPlayersTurn.text = ""}
         
         let  playerResult = gameboard.checkForWinner()
