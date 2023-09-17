@@ -17,9 +17,9 @@ class GameBoard {
     let PLAYER_2 = 2
     var currentPlayer = 1
     
-    
+    var whoWanText: String = ""
     var DRAW = 5
-    let CONTINUE_GAME = 9
+    var CONTINUE_GAME = 9
    
     
     var board = [0,0,0,0,0,0,0,0,0] // Board no value/element in the beginning
@@ -64,7 +64,7 @@ class GameBoard {
             return board[2]
         }
         
-        return CONTINUE_GAME
+        return CONTINUE_GAME // if there is no winner return CONTINUE_GAME
         
     }
     
@@ -99,18 +99,23 @@ class GameBoard {
             let result = checkForWinner()
             
             if result == PLAYER_1{
+                whoWanText = "Player 1 won"
                print("Player 1 won")
                 return PLAYER_1
                
             }
             else if result == PLAYER_2{
+                whoWanText = "Player 2 won"
                 print("Player 2 won")
                 return PLAYER_2
             }
            
         
             else if result != PLAYER_1 && result != PLAYER_2 && !board.contains(EMPTY_CELL){
+                whoWanText = "It's a draw"
+                CONTINUE_GAME = DRAW
                 print("DRAW")
+                print(DRAW)
                 return DRAW
              }
             

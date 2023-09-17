@@ -24,16 +24,18 @@ class ViewController: UIViewController {
     
     //let imgBox = [0,0,0,0,0,0,0,0] 
     
+    
     override func viewDidLoad() {
        super.viewDidLoad()
-        lbl_txtPlayersTurn.text = "Player 1" // Shos that PLAYER_1 beginns
-        btn_reset.isEnabled = false // Button is hidden from start
-        
-        
-        // Do any additional setup after loading the view.
+        //Shos that PLAYER_1 beginns
+        lbl_txtPlayersTurn.text = "Player 1"
+        // Is hidden from start
+        btn_reset.isEnabled = false
     }
     
      
+    
+    
     @IBAction func onTapBox(_ sender: UITapGestureRecognizer) {
         
        print("Hello")
@@ -60,11 +62,18 @@ class ViewController: UIViewController {
             lbl_txtPlayersTurn.text = "Player 2"
             tappedImageView.image = UIImage(named: "apple_icon")
         }
-        else{lbl_txtPlayersTurn.text = ""}
         
         let  playerResult = gameboard.checkForWinner()
         
-        if playerResult == gameboard.PLAYER_1 || playerResult == gameboard.PLAYER_2{
+        print("hej")
+        print(playerResult)
+        
+        if playerResult == gameboard.PLAYER_1 || playerResult == gameboard.PLAYER_2 {
+            lbl_txtWinner.text = gameboard.whoWanText   // get the winner text
+            btn_reset.isEnabled = true
+        }
+        else if playerResult == gameboard.DRAW {
+            lbl_txtWinner.text = gameboard.whoWanText // get draw
             btn_reset.isEnabled = true
         }
         

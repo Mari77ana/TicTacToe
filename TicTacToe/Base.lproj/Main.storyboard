@@ -171,9 +171,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Winner:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE1-BR-XRd">
-                                <rect key="frame" x="36" y="596" width="123" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE1-BR-XRd">
+                                <rect key="frame" x="31.666666666666657" y="596" width="330" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="h2Z-Qx-XxA"/>
+                                    <constraint firstAttribute="height" constant="31" id="wet-MD-tMH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -200,11 +203,13 @@
                             <constraint firstItem="ZFK-aA-OOM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4lX-FU-qMq"/>
                             <constraint firstItem="54F-u4-zMu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CD3-At-bza"/>
                             <constraint firstItem="54F-u4-zMu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="CQN-sG-7oh"/>
+                            <constraint firstItem="YE1-BR-XRd" firstAttribute="top" secondItem="ZFK-aA-OOM" secondAttribute="bottom" constant="35" id="ZAs-wC-2CZ"/>
                             <constraint firstItem="GXu-JW-GIX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="330" id="ZjC-Gi-t29"/>
                             <constraint firstItem="Y6H-bW-luB" firstAttribute="top" secondItem="54F-u4-zMu" secondAttribute="bottom" constant="17" id="bUP-FE-tOv"/>
                             <constraint firstItem="GXu-JW-GIX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i8M-WX-QvC"/>
                             <constraint firstItem="Y6H-bW-luB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qTy-fd-bsw"/>
                             <constraint firstItem="ZFK-aA-OOM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="ynf-zr-Dd6"/>
+                            <constraint firstItem="YE1-BR-XRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zSK-td-FJT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="izK-vc-Fnv"/>
