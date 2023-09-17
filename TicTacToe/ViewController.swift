@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lbl_txtTurn: UILabel!
     
+    @IBOutlet weak var btn_reset: UIButton!
+    
+    @IBOutlet weak var lbl_txtWinner: UILabel!
     
     let gameboard = GameBoard()
     
@@ -22,7 +25,11 @@ class ViewController: UIViewController {
     //let imgBox = [0,0,0,0,0,0,0,0] 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+       super.viewDidLoad()
+        lbl_txtPlayersTurn.text = "Player 1" // Shos that PLAYER_1 beginns
+        btn_reset.isEnabled = false // Button is hidden from start
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -32,20 +39,20 @@ class ViewController: UIViewController {
        print("Hello")
         guard let tappedImageView = sender.view as? UIImageView else {  return }
       
-        guard let tag = sender.view?.tag else{
-                return
-            }
+        guard let tag = sender.view?.tag else{ // Get Tag thru sender, Int?, use guard
+          return}
+        print("My tag \(tag)") // tag is visible when pressing
        
         // OutOfBounds, that's why -1
       // let index = tag - 1
       
         let playing = gameboard.placeOnBoard(atBox: tag)
-        lbl_txtPlayersTurn.text = "Player 1"
-        
+    
         if playing == gameboard.NOT_FREE_CELL{
             return
         }
         if gameboard.currentPlayer == gameboard.PLAYER_1 {
+            lbl_txtPlayersTurn.text = "Player 1"
           tappedImageView.image = UIImage(named:"android_icon")
            
         }
@@ -56,6 +63,18 @@ class ViewController: UIViewController {
         else{lbl_txtPlayersTurn.text = ""}
         
         let  playerResult = gameboard.checkForWinner()
+        
+        if playerResult == gameboard.PLAYER_1 || playerResult == gameboard.PLAYER_2{
+            btn_reset.isEnabled = true
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         
      /*
         if playerResult == gameboard.PLAYER_1{
@@ -88,6 +107,8 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func btn_resetGame(_ sender: UIButton) {
+    }
     
     /*
     // Kolla min gesture

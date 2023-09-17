@@ -20,9 +20,9 @@ class GameBoard {
     
     var DRAW = 5
     let CONTINUE_GAME = 9
+   
     
-    
-    var board = [0,0,0,0,0,0,0,0,0]
+    var board = [0,0,0,0,0,0,0,0,0] // Board no value/element in the beginning
     
     func checkForWinner() -> Int {
         
@@ -35,7 +35,9 @@ class GameBoard {
         // Horizontal row 2,
         //inte är tom
         if board[3] != EMPTY_CELL && board[3] == board[4] && board[4] == board[5]{
+            GAMEOVER = true
             return board[3]
+          
         }
         // Horizontal row 3,
         if board[6] != EMPTY_CELL && board[6] == board[7] && board[7] == board[8]{
@@ -83,19 +85,23 @@ class GameBoard {
      
      */
     
+    var GAMEOVER = false
+    
     func placeOnBoard(atBox: Int) -> Int {
         
+       
         // If Playboard is emty -> play
         if board[atBox] == EMPTY_CELL {
             
-            board[atBox] = currentPlayer
+            board[atBox] = currentPlayer // Board has value from PLAYER_1 and PLAYER_2
             switchPlayers()
             
             let result = checkForWinner()
             
             if result == PLAYER_1{
-                print("Player 1 won")
+               print("Player 1 won")
                 return PLAYER_1
+               
             }
             else if result == PLAYER_2{
                 print("Player 2 won")
@@ -114,6 +120,12 @@ class GameBoard {
          }
         return NOT_FREE_CELL
         // else return full PlayBoard 
+    }
+    
+    func reset(){
+      board = [0,0,0,0,0,0,0,0,0] // No value
+        
+        
     }
    
             
