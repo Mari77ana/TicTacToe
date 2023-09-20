@@ -18,9 +18,10 @@ class GameBoard {
     var currentPlayer = 1
     
     var whoWanText: String = ""
-    var DRAW = 5
-    var CONTINUE_GAME = 9
+    let DRAW = 5
+    let CONTINUE_GAME = 9
    
+    var isPlaying = true
     
     var board = [0,0,0,0,0,0,0,0,0] // Board no value/element in the beginning
     
@@ -28,39 +29,45 @@ class GameBoard {
         
         // Horizontal row 1
         if board[0] != EMPTY_CELL && board[0] == board[1] && board[1] == board[2] {
-            
+           isPlaying = false
             // Här inne vet vi att någon har vunnit på den första horisontella raden.
             return board[0]
         }
         // Horizontal row 2,
         //inte är tom
         if board[3] != EMPTY_CELL && board[3] == board[4] && board[4] == board[5]{
-            GAMEOVER = true
+            isPlaying = false
             return board[3]
           
         }
         // Horizontal row 3,
         if board[6] != EMPTY_CELL && board[6] == board[7] && board[7] == board[8]{
+            isPlaying = false
             return board[6]
         }
         // Vertical column 1
         if board[0] != EMPTY_CELL && board[0] == board[3] && board[3] == board[6]{
+           isPlaying = false
             return board[0]
         }
         // Vertical column 2
         if board[1] != EMPTY_CELL && board[1] == board[4] && board[4] == board[7]{
+            isPlaying = false
             return board[1]
         }
         // Vertical column 3
         if board[2] != EMPTY_CELL && board[2] == board[5] && board[5] == board[8]{
+            isPlaying = false
             return board[2]
         }
         // Diagonal left to right
         if board[0] != EMPTY_CELL && board[0] == board[4] && board[4] == board[8]{
+            isPlaying = false
             return board[0]
         }
         // Diagonal right to left
         if board[2] != EMPTY_CELL && board[2] == board[4] && board[4] == board[6]{
+            isPlaying = false
             return board[2]
         }
         
@@ -70,81 +77,76 @@ class GameBoard {
     
     
     func switchPlayers() {
-        if currentPlayer == PLAYER_1 {
-            currentPlayer = PLAYER_2
-        } else{ currentPlayer = PLAYER_1 }
+        if currentPlayer == 1{
+            currentPlayer = 2
+        } else{ currentPlayer = 1}
     }
     
-    /*
-     
-     BUSY_CELL = 8
-     PLAYER_1 (Innebär att player 1 har vunnit, och spelet är avslutat)
-     PLAYER_2 (INNebär att player 2 osv osv)
-     CONTINUE_GAME
-     DRAW = 5
-     
-     */
-    
-    var GAMEOVER = false
-    
+
     func placeOnBoard(atBox: Int) -> Int {
-        
+
        
         // If Playboard is emty -> play
-        if board[atBox] == EMPTY_CELL {
+        if board[atBox] == EMPTY_CELL && isPlaying {
             
             board[atBox] = currentPlayer // Board has value from PLAYER_1 and PLAYER_2
-            switchPlayers()
-            
+            print("CurrentPlayer \(currentPlayer)")
+         
+          
             let result = checkForWinner()
+           
+            print("Result from checkWinner \(result)")
             
-            if result == PLAYER_1{
-                whoWanText = "Player 1 won"
+            if result == 1{
+                whoWanText = "Player 1 won "
                print("Player 1 won")
-                return PLAYER_1
+                return 1
                
             }
-            else if result == PLAYER_2{
+            else if result == 2{
                 whoWanText = "Player 2 won"
                 print("Player 2 won")
-                return PLAYER_2
+                return 2
             }
-           
-        
+            else if !board.contains(EMPTY_CELL){
+                whoWanText = "It´s a draw"
+              print("DRAW")
+                return DRAW
+            }
+            else {
+                return CONTINUE_GAME}
+            
+            // if result is not ecual player1 and player2 and the board is full
+            /*
             else if result != PLAYER_1 && result != PLAYER_2 && !board.contains(EMPTY_CELL){
                 whoWanText = "It's a draw"
-                CONTINUE_GAME = DRAW
                 print("DRAW")
                 print(DRAW)
                 return DRAW
              }
-            
-            else {
-                return CONTINUE_GAME}
-            
+             
+             */
          }
+        
         return NOT_FREE_CELL
-        // else return full PlayBoard 
-    }
-    
-    func reset(){
-      board = [0,0,0,0,0,0,0,0,0] // No value
-        
-        
+        // else return full PlayBoard
+       
     }
    
-            
+    func resetGame(){
+      board = [0,0,0,0,0,0,0,0,0]
+      currentPlayer = 1
+      isPlaying = true
+        
+    }
+    
+  
+   
+    
 }
             
             
-            
-            
-            
-            
-            //let GAMEOVER = result != CONTINUE_GAME
-            
-            //result != CONTINUE_GAME
-            // Avsluta spelet
+        
             
             
             
@@ -152,38 +154,10 @@ class GameBoard {
             
             
             
-            /*
-             // Om rutan inte är tom, så avslutar vi funktionen  här
-             if board[atBox] != EMPTY_CELL {
-             return 8
-             }
-             */
-            
-            // Sätt nuvarande spelares värde i rutan
-            //board[atBox] = currentPlayer
             
             
             
-            
-            // Kolla om elementet är tom, annars returnera false
-            
-            // Uppdatera värdet på elementet till nuvarande spelares siffra
-            
-            // Kolla om någon har vunnit, om så ska du avsluta spelet och annonsera vinnaren!
-            
-            //        let result = checkForWinner()
-            //
-            //        if result == PLAYER_1 {
-            //            // Player 1 har vunnit
-            //
-            //            // Stoppa spelet och annonsera vinnaren
-            //        } else if result == PLAYER_2 {
-            //
-            //
-            //        }
-            
-            
-            // Switcha spelares turn
+                    
             
             
             
