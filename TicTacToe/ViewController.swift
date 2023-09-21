@@ -94,19 +94,43 @@ class ViewController: UIViewController {
     }
     
     
-    // Button reset the game to play again
+    // Button reset the game, icons and text to play again
     @IBAction func btn_resetGame(_ sender: UIButton) {
         
         gameboard.resetGame()
-        btn_reset.isEnabled = false
+        resetIconsAndText()
+       
+    }
+    
+    
+    
+    
+    func resetIconsAndText(){
+        
         lbl_txtWinner.text = ""
         lbl_txtPlayersTurn.text = ""
+        btn_reset.isEnabled = false
         
+        for eachIcon in img_boxes{
+            eachIcon.image = nil
+            print("Reseted: emty playboard ")
+        }
         
     }
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     
     
     
@@ -135,20 +159,6 @@ class ViewController: UIViewController {
         
        
     }
-     
-     
-     
-     // make image_boxes to nil for playing again
-     for boxImages in img_boxes{
-         boxImages.image = nil
-         print("Reseted: \(boxImages)")
-     }
-     
-     
-     
-     
-     
-     
     
     @IBAction func TapGester(_ sender: UITapGestureRecognizer) {
         print("tapped")
