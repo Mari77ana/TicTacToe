@@ -42,14 +42,11 @@ class ViewController: UIViewController {
         
         print("My tag \(tag)") // tag is visible when pressed
         
-        // OutOfBounds, that's why -1
-        // let index = tag - 1
-        
+       
         let result = gameboard.placeOnBoard(atBox: tag)
         
 
-        
-        //
+        // If board is free -> set icons to players 
         if result != gameboard.NOT_FREE_CELL {
             if gameboard.currentPlayer == 1 {
                 
@@ -65,22 +62,25 @@ class ViewController: UIViewController {
         case gameboard.NOT_FREE_CELL:
            break
             
-        // When the game is on , switch players, win or draw
+        // When the game is on , switch players, call winners or draw
         case gameboard.CONTINUE_GAME:
-
-            gameboard.switchPlayers()
+             gameboard.switchPlayers()
             break
             
         case gameboard.DRAW:
+            gameboard.isPlaying = false
+            lbl_txtWinner.text = gameboard.whoWanText
+            btn_reset.isEnabled = true
+           break
+            
+        case gameboard.PLAYER_1:
+            gameboard.isPlaying = false
             lbl_txtWinner.text = gameboard.whoWanText
             btn_reset.isEnabled = true
             break
             
-        case gameboard.PLAYER_1:
-            lbl_txtWinner.text = gameboard.whoWanText
-            btn_reset.isEnabled = true
-            
         case gameboard.PLAYER_2:
+            gameboard.isPlaying = false
             lbl_txtWinner.text = gameboard.whoWanText
             btn_reset.isEnabled = true
         
@@ -88,101 +88,38 @@ class ViewController: UIViewController {
                 break
            
     }
+    
         
-        
-        
-        /*
-        print("vad är currentplayer:\(gameboard.currentPlayer), vad är Player1: \(gameboard.PLAYER_1)")
-        let currentPlayer = gameboard.currentPlayer
-        
-        tappedImageView.image = UIImage(named: "apple_icon")
-        tappedImageView.image = UIImage(named: "android_icon")
-        
-        let players = currentPlayer == gameboard.PLAYER_1 ? "apple_icon" : "android_icon"
-     
-//        if gameboard.currentPlayer == gameboard.PLAYER_1{
-//            print("Om currentPlayer = Player1= \(gameboard.currentPlayer) = \(gameboard.PLAYER_1)(gameboard.currentPlayer),  sätter texten 1 och Äpplet")
-//            lbl_txtPlayersTurn.text = "Player 1"
-//            tappedImageView.image = UIImage(named: "apple_icon" )
-//        }
-//        else if gameboard.currentPlayer == gameboard.PLAYER_2   {
-//            lbl_txtPlayersTurn.text = "Player 2"
-                                        //            tappedImageView.image = UIImage(named: "android_icon" lbl_txtPlayersTurn.text = "Player 2"
-                                        //            tappedImageView.image = UIImage(named: "android_icon")
-//        }
-       */
-        
-
-          
-            
-            
-            
-            
-            
-//        case gameboard.NOT_FREE_CELL:
-//            // Uppdatera dina vykomponenter utifrån detta, Show text Player1 & Player2
-//
-//            if gameboard.currentPlayer == gameboard.PLAYER_1 {
-//                lbl_txtWinner.text = gameboard.whoWanText
-//
-//            }else if gameboard.currentPlayer == gameboard.PLAYER_2 {
-//                lbl_txtWinner.text = gameboard.whoWanText
-//
-//            }
-//            break
-//
-//
-//        case gameboard.PLAYER_1:
-//                print("android_icon")
-//            lbl_txtWinner.text = gameboard.whoWanText
-//            btn_reset.isEnabled = true
-//            break
-//
-//        case gameboard.DRAW:
-//            // Uppdatera
-//            lbl_txtWinner.text = gameboard.whoWanText
-//            btn_reset.isEnabled = true
-//            break
-//
-       
-        
-        
-        /*
-        if result == gameboard.NOT_FREE_CELL{
-            return
-        }
-        
-        if gameboard.currentPlayer == gameboard.PLAYER_1 {
-            lbl_txtPlayersTurn.text = "Player 1"
-          tappedImageView.image = UIImage(named:"android_icon")
-           
-        }
-        else if gameboard.currentPlayer == gameboard.PLAYER_2 {
-            lbl_txtPlayersTurn.text = "Player 2"
-            tappedImageView.image = UIImage(named: "apple_icon")
-        }
-        
-        let  playerResult = gameboard.checkForWinner()
-        
-        if playerResult == gameboard.PLAYER_1 || playerResult == gameboard.PLAYER_2 {
-            lbl_txtWinner.text = gameboard.whoWanText   // get the winner text
-            btn_reset.isEnabled = true
-        }
-        else if playerResult == gameboard.DRAW {
-            lbl_txtWinner.text = gameboard.whoWanText // get draw
-            btn_reset.isEnabled = true
-        }
-         */
         
     }
     
+    
+    // Button reset the game to play again
     @IBAction func btn_resetGame(_ sender: UIButton) {
-        // Game starts again by reset it
-        print("Action Reset")
+        
         gameboard.resetGame()
         btn_reset.isEnabled = false
         lbl_txtWinner.text = ""
+        lbl_txtPlayersTurn.text = ""
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*
     // Kolla min gesture
@@ -198,6 +135,20 @@ class ViewController: UIViewController {
         
        
     }
+     
+     
+     
+     // make image_boxes to nil for playing again
+     for boxImages in img_boxes{
+         boxImages.image = nil
+         print("Reseted: \(boxImages)")
+     }
+     
+     
+     
+     
+     
+     
     
     @IBAction func TapGester(_ sender: UITapGestureRecognizer) {
         print("tapped")
@@ -207,8 +158,9 @@ class ViewController: UIViewController {
         
         print("\(tag)")
     }
-     
      */
+     
+     
     
     
 }

@@ -22,6 +22,7 @@ class GameBoard {
     let CONTINUE_GAME = 9
    
     var isPlaying = true
+    let EMOJI = "\u{1F61B}"
     
     var board = [0,0,0,0,0,0,0,0,0] // Board no value/element in the beginning
     
@@ -29,45 +30,45 @@ class GameBoard {
         
         // Horizontal row 1
         if board[0] != EMPTY_CELL && board[0] == board[1] && board[1] == board[2] {
-           isPlaying = false
+          
             // Här inne vet vi att någon har vunnit på den första horisontella raden.
             return board[0]
         }
         // Horizontal row 2,
         //inte är tom
         if board[3] != EMPTY_CELL && board[3] == board[4] && board[4] == board[5]{
-            isPlaying = false
+            
             return board[3]
           
         }
         // Horizontal row 3,
         if board[6] != EMPTY_CELL && board[6] == board[7] && board[7] == board[8]{
-            isPlaying = false
+            
             return board[6]
         }
         // Vertical column 1
         if board[0] != EMPTY_CELL && board[0] == board[3] && board[3] == board[6]{
-           isPlaying = false
+           
             return board[0]
         }
         // Vertical column 2
         if board[1] != EMPTY_CELL && board[1] == board[4] && board[4] == board[7]{
-            isPlaying = false
+           
             return board[1]
         }
         // Vertical column 3
         if board[2] != EMPTY_CELL && board[2] == board[5] && board[5] == board[8]{
-            isPlaying = false
+            
             return board[2]
         }
         // Diagonal left to right
         if board[0] != EMPTY_CELL && board[0] == board[4] && board[4] == board[8]{
-            isPlaying = false
+            
             return board[0]
         }
         // Diagonal right to left
         if board[2] != EMPTY_CELL && board[2] == board[4] && board[4] == board[6]{
-            isPlaying = false
+            
             return board[2]
         }
         
@@ -86,7 +87,7 @@ class GameBoard {
     func placeOnBoard(atBox: Int) -> Int {
 
        
-        // If Playboard is emty -> play
+        // If Playboard is emty && players are playing
         if board[atBox] == EMPTY_CELL && isPlaying {
             
             board[atBox] = currentPlayer // Board has value from PLAYER_1 and PLAYER_2
@@ -94,40 +95,32 @@ class GameBoard {
          
           
             let result = checkForWinner()
-           
             print("Result from checkWinner \(result)")
             
+            // PLAYER_1 -> wins
             if result == 1{
-                whoWanText = "Player 1 won "
+                whoWanText = "Player 1 won \(EMOJI)"
                print("Player 1 won")
                 return 1
-               
             }
+            
+            // PLAYER_2 -> wins
             else if result == 2{
-                whoWanText = "Player 2 won"
+                whoWanText = "Player 2 won \(EMOJI)"
                 print("Player 2 won")
                 return 2
             }
-            else if !board.contains(EMPTY_CELL){
+            
+            // If no winners and the playboard is full -> DRAW
+            else if result != PLAYER_1 && result != PLAYER_2 && !board.contains(EMPTY_CELL){
                 whoWanText = "It´s a draw"
               print("DRAW")
                 return DRAW
             }
             else {
-                return CONTINUE_GAME}
-            
-            // if result is not ecual player1 and player2 and the board is full
-            /*
-            else if result != PLAYER_1 && result != PLAYER_2 && !board.contains(EMPTY_CELL){
-                whoWanText = "It's a draw"
-                print("DRAW")
-                print(DRAW)
-                return DRAW
-             }
-             
-             */
-         }
-        
+               return CONTINUE_GAME}
+            }
+       
         return NOT_FREE_CELL
         // else return full PlayBoard
        
