@@ -29,6 +29,7 @@ class GameBoard {
     func checkForWinner() -> Int {
         
         // Horizontal row 1
+        // If board is not empty
         if board[0] != EMPTY_CELL && board[0] == board[1] && board[1] == board[2] {
           
             // Här inne vet vi att någon har vunnit på den första horisontella raden.
@@ -76,7 +77,8 @@ class GameBoard {
         
     }
     
-    
+    // func switch players
+    // if currentPlayer is 1, switch to currentPlayer 2
     func switchPlayers() {
         if currentPlayer == 1{
             currentPlayer = 2
@@ -84,10 +86,11 @@ class GameBoard {
     }
     
 
+    // Funktion placeOnBoard, takes Int because argument is Tag and it is a Int
     func placeOnBoard(atBox: Int) -> Int {
 
        
-        // If Playboard is emty && players are playing
+        // If Playboard is emty && players are playing, else return full playboard
         if board[atBox] == EMPTY_CELL && isPlaying {
             
             board[atBox] = currentPlayer // Board has value from PLAYER_1 and PLAYER_2
@@ -126,6 +129,7 @@ class GameBoard {
        
     }
    
+    // Resets the game, from the beginning
     func resetGame(){
       board = [0,0,0,0,0,0,0,0,0]
       currentPlayer = 1

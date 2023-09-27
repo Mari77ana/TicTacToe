@@ -27,7 +27,9 @@ class ViewController: UIViewController {
         //Shoes that PLAYER_1 beginns
        // gameboard.currentPlayer = gameboard.PLAYER_1
       //  lbl_txtPlayersTurn.text = "Player 1"
-        // Is hidden from start
+        
+        
+        // Button is hidden from start
         btn_reset.isEnabled = false
         
     }
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
         
         print("My tag \(tag)") // tag is visible when pressed
         
-       
+       // Call placeOnBoard, argument Tag because the UIImageView
         let result = gameboard.placeOnBoard(atBox: tag)
         
 
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
         }
         
         
+        // Call GameBoard And Show Result for players
         switch result {
         case gameboard.NOT_FREE_CELL:
            break
@@ -103,8 +106,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
+    // Resets text and  ImageViews 
     func resetIconsAndText(){
         
         lbl_txtWinner.text = ""
